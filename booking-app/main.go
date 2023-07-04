@@ -6,7 +6,8 @@ func main() {
 	conferenceName := "GO Conference"
 	const conferenceTickets int = 50
 	var remainingTickets uint = 50
-	var bookings [50]string
+	// var bookings [50]string //array with size defined
+	bookings := []string{}
 
 	// fmt.Printf("conferenceTickets is %T, remainingTickets is %T, conferenceName is %T\n", conferenceTickets, remainingTickets, conferenceName)
 
@@ -34,7 +35,8 @@ func main() {
 	fmt.Scan(&userTickets)
 
 	remainingTickets = remainingTickets - userTickets
-	bookings[0] = firstName + "" + lastName
+	// bookings[0] = firstName + "" + lastName
+	bookings = append(bookings, firstName+""+lastName)
 
 	fmt.Printf("The whole array: %v.\n", bookings)
 	fmt.Printf("The first value: %v.\n", bookings[0])
@@ -44,4 +46,5 @@ func main() {
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will recieve a confirmation email at %v.\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
 
+	fmt.Printf("These are all the bookings %v\n", bookings)
 }
